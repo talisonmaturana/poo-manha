@@ -15,5 +15,15 @@ public class Main {
         apolice.getValorPremio();
 
         apolice.imprimir();
+
+        for (int i = 0; i < 100 ; i++) {
+            //System.out.println("i = " + i);
+        }
+        
+        int x = 1;
+        while (x != 10){
+            System.out.println("x = " + x);
+            x++;
+        }
     }
 }

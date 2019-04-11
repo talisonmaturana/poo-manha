@@ -1,5 +1,6 @@
 package com.programa3;
 
+
 import com.programa2.Janela;
 
 public class Casa {

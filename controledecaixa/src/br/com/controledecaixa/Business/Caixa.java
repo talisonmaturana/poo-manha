@@ -1,5 +1,7 @@
 package br.com.controledecaixa.Business;
 
+import br.com.controledecaixa.Utilities.ControleDeCaixaException;
+
 public class Caixa {
 
     public double saldo;
@@ -17,12 +19,13 @@ public class Caixa {
         }
     }
 
-    public String sacar(double valor) {
-        if(valor <= saldo){
-            saldo -= valor;
-            return "Saque de " + valor + " efetuado com sucesso";
-        }else {
-            return "Saldo insuficiente";
+    public String sacar(double valor) throws ControleDeCaixaException {
+        try {
+            if (valor > saldo) throw new ControleDeCaixaException();
+        } catch (Exception e) {
+            throw e;
         }
+        saldo -= valor;
+        return "Saque efetuado com sucesso";
     }
 }
